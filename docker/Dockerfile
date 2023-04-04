@@ -46,9 +46,9 @@ RUN ls -l $LASER/models
 
 # RUN conda install --name env -c pytorch faiss-cpu -y
 
-# RUN bash ./install_external_tools.sh
+RUN bash ./install_external_tools.sh
 
-# COPY ./decode.py $LASER/tasks/embed/decode.py
+COPY docker/decode.py $LASER/tasks/embed/decode.py
 
 
 # Make port 80 available to the world outside this container
