@@ -19,7 +19,8 @@
 # BEGIN PARAMETERS TO SET
 #############################
 # location of models (e.g. /path/to/models); no trailing slash
-model_dir=""
+model_dir=${LASER}/"models"
+echo "model_dir: $model_dir"
 
 # version number for LASER3 models
 version=1
