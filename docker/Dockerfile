@@ -19,6 +19,8 @@ RUN apt-get -qq -y install \
         sudo \
         vim
 
+RUN apt-get -qq -y install cmake
+
 # Use C.UTF-8 locale to avoid issues with ASCII encoding
 ENV LC_ALL=C.UTF-8
 ENV LANG=C.UTF-8
@@ -40,7 +42,6 @@ WORKDIR $LASER
 
 # RUN bash ./install_models.sh
 COPY models $LASER/models
-RUN ls -l $LASER/models
 
 #Installing FAISS
 
