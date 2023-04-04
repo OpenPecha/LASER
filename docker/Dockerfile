@@ -55,9 +55,14 @@ COPY docker/decode.py $LASER/tasks/embed/decode.py
 # Make port 80 available to the world outside this container
 WORKDIR /app
 
+# test engligsh embedding
 RUN echo "Hello World" > test.txt
+RUN $LASER/tasks/embed/embed.sh test.txt test_embed.raw bod_Tibt
+RUN python $LASER/tasks/embed/decode.py test_embed.raw
 
-RUN $LASER/tasks/embed/embed.sh test.txt test_embed.raw
+# test tibetan embedding
+RUN echo "སློབ་དཔོན་བྲམ་ཟེ་རྟ་དབྱངསཀྱིཡོམཛད།" > test.txt
+RUN $LASER/tasks/embed/embed.sh test.txt test_embed.raw bod_Tibt
 RUN python $LASER/tasks/embed/decode.py test_embed.raw
 
 #Open the port 80

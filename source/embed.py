@@ -33,7 +33,7 @@ import torch
 import torch.nn as nn
 
 
-from .lib.text_processing import Token, BPEfastApply, SPMApply
+from lib.text_processing import Token, BPEfastApply, SPMApply
 
 from fairseq.models.transformer import (
     Embedding,
